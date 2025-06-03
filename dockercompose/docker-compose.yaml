@@ -1,5 +1,6 @@
 services:
   balance-service:
+    platform: linux/amd64  # ← Добавь эту строку
     build:
       context: ../balance-service
       dockerfile: Dockerfile
@@ -32,6 +33,7 @@ services:
     restart: unless-stopped
 
   user-service:
+    platform: linux/amd64  # ← Добавь эту строку
     build:
       context: ../user-service  # Указывает на корень проекта, где находится директория user-service
       dockerfile: Dockerfile  # Путь к Dockerfile в директории user-service
@@ -76,6 +78,7 @@ services:
     restart: unless-stopped
 
   notification-service:
+    platform: linux/amd64  # ← Добавь эту строку
     build:
       context: ../notification-service  # Указывает на корень проекта, где находится директория user-service
       dockerfile: Dockerfile  # Путь к Dockerfile в директории user-service
